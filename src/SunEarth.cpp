@@ -38,14 +38,14 @@ int main() {
 
         if (step % 100 == 0) {
             std::cout << sim.time << "\t\t"
-                      << earthRef.pos.x << "\t"
-                      << earthRef.pos.y << "\t\t"
-                      << earthRef.vel.x << "\t"
-                      << earthRef.vel.y << "\t\t"
-                      << dist << "\t\t"
-                      << Fvec.x << "\t"
-                      << Fvec.y << "\t"
-                      << Fmag << "\n";
+                        << earthRef.pos.x << "\t"
+                        << earthRef.pos.y << "\t\t"
+                        << earthRef.vel.x << "\t"
+                        << earthRef.vel.y << "\t\t"
+                        << dist << "\t\t"
+                        << Fvec.x << "\t"
+                        << Fvec.y << "\t"
+                        << Fmag << "\n";
         }
     }
 

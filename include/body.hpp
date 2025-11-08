@@ -10,6 +10,7 @@ struct Body{
   Vec2 velPrev;
   Vec2 vel;
   Vec2 acc;
+  Vec2 accPrev;
 
   Body(std::string name_, double mass_ = 1, Vec2 pos_ = Vec2(0,0), Vec2 vel_ = Vec2(0,0), Vec2 acc_ = Vec2(0,0)){
     name = name_;
@@ -20,6 +21,7 @@ struct Body{
     vel = vel_;
     velPrev = vel;
     acc = acc_;
+    accPrev = acc;
   }
 
   void applyForce(const Vec2& F){
@@ -32,11 +34,12 @@ struct Body{
   }
 
   void update(double dt){
-    vel.x = velPrev.x + acc.x*dt;
-    vel.y = velPrev.y + acc.y*dt;
 
     pos.x = posPrev.x + velPrev.x*dt + 0.5*acc.x*dt*dt;
     pos.y = posPrev.y + velPrev.y*dt + 0.5*acc.y*dt*dt;
+
+    vel.x = velPrev.x + acc.x*dt;
+    vel.y = velPrev.y + acc.y*dt;
 
     velPrev = vel;
     posPrev = pos;
