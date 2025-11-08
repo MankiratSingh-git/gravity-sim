@@ -1,4 +1,4 @@
-# 🌌 Gravity Simulation (C++) — Test Release v0.1
+#  Gravity Simulation (C++) — Test Release v0.1
 
 This project is a **2D gravity simulator** written entirely in **C++20**, built from scratch without any external libraries.  
 It numerically simulates gravitational attraction between multiple bodies according to **Newton’s Law of Universal Gravitation**.
@@ -7,7 +7,7 @@ This release implements the **core physics engine** and a **console-based Sun–
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 The goal of this project is to simulate the motion of celestial bodies (like planets and stars) under mutual gravity.  
 Each body moves based on the sum of forces acting on it from every other body, updated in discrete time steps.
@@ -64,19 +64,6 @@ This avoids numerical instability while having negligible effect at larger dista
 
 ---
 
-## Project Structure
-
-```
-GravitySim/
-│
-├── vec2.hpp         # Defines 2D vector math utilities
-├── body.hpp         # Represents a celestial body (mass, pos, vel, acc)
-├── simulation.hpp   # Handles gravitational interaction and updates
-├── SunEarth.cpp     # Example: Earth orbiting the Sun
-└── README.md        # This file
-```
-
----
 
 ## Components
 
