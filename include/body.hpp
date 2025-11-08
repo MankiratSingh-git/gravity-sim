@@ -9,17 +9,18 @@ struct Body{
   Vec2 vel;
   Vec2 acc;
 
-  Body(std::string name_, double mass_ = 0, Vec2 pos_ = Vec2(0,0), Vec2 vel_ = Vec2(0,0), Vec2 acc_ = Vec2(0,0)){
+  Body(std::string name_, double mass_ = 1, Vec2 pos_ = Vec2(0,0), Vec2 vel_ = Vec2(0,0), Vec2 acc_ = Vec2(0,0)){
     name = name_;
     if(mass_ > 0) mass = mass_;
+    else mass = 1;
     pos = pos_;
     vel = vel_;
     acc = acc_;
   }
 
   void applyForce(const Vec2& F){
-    acc.x = F.x/mass;
-    acc.y = F.y/mass;
+    acc.x += F.x/mass;
+    acc.y += F.y/mass;
   }
 
   void resetAcc(){
@@ -29,5 +30,8 @@ struct Body{
   void update(double dt){
     vel.x = vel.x + acc.x*dt;
     vel.y = vel.y + acc.y*dt;
+
+    pos.x = vel.x*dt + 0.5*acc.x*dt*dt;
+    pos.y = vel.y*dt + 0.5*acc.y*dt*dt;
   }
 };
